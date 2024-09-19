@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-striped table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th>BULLETIN_NAME</th>
+                <th>SR_NUMBER</th>
+                <th>STUDY_NAME</th>
+                <th>STATUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.BULLETIN_NAME }}</td>
+                    <td>{{ item.SR_NUMBER }}</td>
+                    <td>{{ item.STUDY_NAME }}</td>
+                    <td>{{ item.STATUS }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

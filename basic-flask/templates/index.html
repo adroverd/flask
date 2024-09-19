@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Flask HTMX</title>
+    <!-- Incluir HTMX y Bootstrap para estilos básicos -->
+    <script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1>Contador</h1>
+    <div id="counter" class="container mt-5">
+        <p>Conteo: <span id="count">0</span></p>
+        <button class="btn btn-primary" hx-post="/increment" hx-target="#count" hx-swap="innerHTML">
+            Incrementar
+        </button>
+    </div>
+    <div class="container mt-5">
+        <button class="btn btn-primary" hx-get="/list" hx-target="#list-container">Cargar Lista</button>
+    </div>
+    <div class="mt-5" id="list-container" hx-target="none" hx-trigger="load"></div>
+</body>
+</html>
